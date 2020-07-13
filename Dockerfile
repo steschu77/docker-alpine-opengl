@@ -1,6 +1,6 @@
 FROM alpine:edge
 
-RUN apk --no-cache add cmake make gcc g++ libc-dev cppcheck binutils-gold ninja
+RUN apk --no-cache add cmake make yasm gcc g++ libc-dev openssl-dev cppcheck binutils-gold ninja && rm /usr/bin/vsyasm /usr/bin/ytasm
 RUN apk --no-cache add ccache ca-certificates wget && update-ca-certificates
 RUN apk --no-cache add freeglut-dev
 
